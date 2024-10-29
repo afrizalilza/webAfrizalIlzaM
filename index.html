@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>récordsDeVida</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script>
+      // Redirect ke login jika belum login
+      if (!localStorage.getItem("isLoggedIn")) {
+        window.location.href = "login.html";
+      }
+    </script>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      role="navigation"
+    >
+      <a class="navbar-brand" href="#">
+        <img
+          src="img/logoBook.png"
+          alt="Logo Récords de vida"
+          class="navbar-logo"
+        />
+        <span>Récords de vida</span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#fitur">Fitur</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#harga">Harga</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#daftar">Daftar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kontak.html">Kontak</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <section id="home">
+        <h1 class="welcome-title">Selamat Datang di Récords de vida</h1>
+        <div class="intro-container">
+          <div class="logo-container">
+            <div class="logo-wrapper">
+              <div class="logo-glow"></div>
+              <img
+                src="img/logoBook.png"
+                alt="Logo WebApp Fiktif"
+                class="img-fluid logo-img animate-logo"
+                srcset="
+                  img/logoBook.png  600w,
+                  img/logoBook.png  800w,
+                  img/logoBook.png 1200w
+                "
+                sizes="(max-width: 600px) 90vw,
+                       (max-width: 1200px) 50vw,
+                       40vw"
+              />
+              <div class="logo-shine"></div>
+              <div class="logo-particles"></div>
+            </div>
+            <div class="logo-shadow"></div>
+          </div>
+          <div class="intro-text">
+            <div class="highlight-box">
+              <i class="fas fa-quote-left quote-icon"></i>
+              <p class="lead">
+                Mengubah setiap momen berharga Anda menjadi kenangan digital
+                yang tak terlupakan
+              </p>
+            </div>
+            <div class="description-container">
+              <div class="intro-section">
+                <div class="intro-header">
+                  <i class="fas fa-book-open intro-icon"></i>
+                  <h3>Kisah Digital Anda Dimulai Di Sini</h3>
+                </div>
+                <div class="intro-divider"></div>
+                <p class="intro-text">
+                  Selamat datang di dunia pencatatan digital yang revolusioner.
+                  <span class="highlight-text">Récords de vida</span> adalah
+                  platform inovatif yang menggabungkan teknologi AI dengan
+                  pengalaman menulis jurnal personal yang intuitif.
+                </p>
+                <div class="intro-features">
+                  <div class="intro-feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privasi Terjamin</span>
+                  </div>
+                  <div class="intro-feature-item">
+                    <i class="fas fa-sync"></i>
+                    <span>Sinkronisasi Real-time</span>
+                  </div>
+                  <div class="intro-feature-item">
+                    <i class="fas fa-cloud"></i>
+                    <span>Backup Otomatis</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="description animate-text">
+                <span class="highlight-text">Récords de vida</span> hadir
+                sebagai solusi inovatif untuk meningkatkan produktivitas dan
+                memperkaya pengalaman pencatatan kehidupan Anda. Dengan
+                antarmuka yang intuitif, Anda dapat dengan mudah:
+              </p>
+            </div>
+            <div class="key-features-container">
+              <div class="key-feature-card">
+                <div class="feature-icon-wrapper">
+                  <i class="fas fa-microphone-alt pulse"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Pencatatan Suara</h4>
+                  <p>Rekam momen berharga dengan suara jernih</p>
+                  <div class="feature-badge">
+                    <span>Fitur Unggulan</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="key-feature-card">
+                <div class="feature-icon-wrapper">
+                  <i class="fas fa-calendar-alt pulse"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Kalender Pintar</h4>
+                  <p>Atur jadwal dengan teknologi AI</p>
+                  <div class="feature-badge">
+                    <span>Fitur Terpopuler</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="key-feature-card">
+                <div class="feature-icon-wrapper">
+                  <i class="fas fa-brain pulse"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Analisis AI</h4>
+                  <p>Insight cerdas untuk produktivitas</p>
+                  <div class="feature-badge">
+                    <span>Teknologi Terbaru</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fitur">
+        <h2 class="text-center mb-5">Fitur Unggulan</h2>
+        <div class="row">
+          <!-- Fitur 1: Pencatatan Digital -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-journal-whills"></i>
+                <!-- Ikon buku jurnal -->
+              </div>
+              <h3>Pencatatan Digital</h3>
+              <p>Catat momen kehidupan Anda dengan mudah dan terorganisir</p>
+              <div class="feature-hover">
+                <ul>
+                  <li><i class="fas fa-microphone"></i> Input suara</li>
+                  <li><i class="fas fa-camera"></i> Galeri foto</li>
+                  <li><i class="fas fa-tags"></i> Tag & kategori</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fitur 2: Analisis Mood -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-smile-beam"></i>
+                <!-- Ikon emoji senyum -->
+              </div>
+              <h3>Analisis Mood</h3>
+              <p>
+                Analisis mood dan emosi berbasis AI untuk insight yang lebih
+                baik
+              </p>
+              <div class="feature-hover">
+                <ul>
+                  <li><i class="fas fa-chart-line"></i> Grafik mood</li>
+                  <li><i class="fas fa-robot"></i> Rekomendasi AI</li>
+                  <li><i class="fas fa-history"></i> Riwayat mood</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fitur 3: Kalender Pintar -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-calendar-check"></i>
+                <!-- Ikon kalender dengan centang -->
+              </div>
+              <h3>Kalender Pintar</h3>
+              <p>
+                Kelola jadwal dan pengingat dengan kalender yang terintegrasi AI
+              </p>
+              <div class="feature-hover">
+                <ul>
+                  <li><i class="fas fa-bell"></i> Pengingat cerdas</li>
+                  <li><i class="fas fa-sync"></i> Sinkronisasi multi-device</li>
+                  <li><i class="far fa-clock"></i> Timeline otomatis</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fitur 4: Privasi & Keamanan -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+                <!-- Ikon perisai keamanan -->
+              </div>
+              <h3>Privasi & Keamanan</h3>
+              <p>Lindungi catatan Anda dengan sistem keamanan berlapis</p>
+              <div class="feature-hover">
+                <ul>
+                  <li><i class="fas fa-fingerprint"></i> Biometric login</li>
+                  <li><i class="fas fa-lock"></i> Enkripsi end-to-end</li>
+                  <li>
+                    <i class="fas fa-cloud-upload-alt"></i> Backup otomatis
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tambah tombol Request Fitur -->
+        <div class="text-center mt-4">
+          <button
+            class="btn btn-request-feature"
+            data-toggle="modal"
+            data-target="#requestFeatureModal"
+          >
+            <i class="fas fa-plus-circle"></i> Request Fitur Baru
+          </button>
+        </div>
+      </section>
+
+      <!-- Modal Request Fitur -->
+      <div
+        class="modal fade"
+        id="requestFeatureModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="requestFeatureModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="requestFeatureModalLabel">
+                Request Fitur Baru
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="feature-request-form">
+                <div class="form-group">
+                  <label for="feature-name">Nama Fitur</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="feature-name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="feature-description">Deskripsi Fitur</label>
+                  <textarea
+                    class="form-control"
+                    id="feature-description"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="feature-reason">Alasan Dibutuhkan</label>
+                  <textarea
+                    class="form-control"
+                    id="feature-reason"
+                    rows="2"
+                    required
+                  ></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Tutup
+              </button>
+              <button type="button" class="btn btn-submit-feature">
+                Kirim Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section id="harga">
+        <h2>Paket Berlangganan</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Paket</th>
+              <th>Harga</th>
+              <th>Fitur</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Basic</td>
+              <td>Rp 99.000/bulan</td>
+              <td>Fitur dasar</td>
+            </tr>
+            <tr>
+              <td>Pro</td>
+              <td>Rp 199.000/bulan</td>
+              <td>Fitur dasar + Analisis lanjutan</td>
+            </tr>
+            <tr>
+              <td>Enterprise</td>
+              <td>Hubungi kami</td>
+              <td>Semua fitur + Dukungan prioritas</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="demo">
+        <h2>Video Demo</h2>
+        <video width="100%" controls>
+          <source src="video/demo_video.mp4" type="video/mp4" />
+          Browser Anda tidak mendukung tag video.
+        </video>
+      </section>
+
+      <section id="daftar">
+        <h2>Daftar Sekarang</h2>
+        <form id="registration-form">
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input type="text" class="form-control" id="nama" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              title="Masukkan alamat email yang valid"
+            />
+            <div class="invalid-feedback">Email tidak valid</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="paket">Pilih Paket</label>
+            <select class="form-control" id="paket" required>
+              <option value="">Pilih paket...</option>
+              <option value="basic">Basic</option>
+              <option value="pro">Pro</option>
+              <option value="enterprise">Enterprise</option>
+            </select>
+          </div>
+          <div class="form-group form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="setuju"
+              required
+            />
+            <label class="form-check-label" for="setuju"
+              >Saya setuju dengan syarat dan ketentuan</label
+            >
+          </div>
+          <button type="submit" class="btn btn-success">Daftar</button>
+        </form>
+      </section>
+
+      <section id="resmi">
+        <h2>Halaman Resmi</h2>
+        <p>Kunjungi halaman resmi kami untuk informasi lebih lanjut:</p>
+        <a
+          href="https://afrizalilza.github.io/afrizalilzamunadhif_uas_sti.github.io/"
+          target="_blank"
+          >www.récordsdevida.com</a
+        >
+        <iframe
+          src="https://afrizalilza.github.io/afrizalilzamunadhif_uas_sti.github.io/"
+          width="100%"
+          height="300"
+          frameborder="0"
+        ></iframe>
+      </section>
+    </div>
+
+    <!-- Ganti footer lama dengan yang baru -->
+    <footer class="footer-modern">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="img/logoBook.png" alt="Logo Footer" class="footer-logo" />
+          <div class="footer-brand-text">Récords de vida</div>
+        </div>
+        <div class="footer-separator"></div>
+        <div class="footer-copyright">
+          <div class="copyright-wrapper">
+            <span class="copyright-icon">©</span>
+            <span class="copyright-year">
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+            </span>
+            <span class="copyright-divider">|</span>
+            <span class="copyright-text">Récords de vida</span>
+          </div>
+          <div class="footer-social">
+            <a
+              href="https://www.facebook.com/share/kDPjugiNESjmJVpZ/?mibextid=qi2Omg"
+              target="_blank"
+              class="social-link"
+              title="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://wa.link/589v0r"
+              target="_blank"
+              class="social-link"
+              title="WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/afrizalilza?igsh=MTZxN2toaHdkNnNzcQ=="
+              target="_blank"
+              class="social-link"
+              title="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
